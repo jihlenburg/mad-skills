@@ -10,6 +10,11 @@
       "name": "devils-advocate",
       "source": "./plugins/devils-advocate",
       "description": "Dispatch a subagent to argue against a decision before you commit. For the calls that are costly to get wrong."
+    },
+    {
+      "name": "trains-of-thought-audit",
+      "source": "./plugins/trains-of-thought-audit",
+      "description": "Find where a long, much-edited or LLM-written document contradicts itself: drifting numbers, broken invention numbering, repudiated claims that resurface."
     }
   ]
 }

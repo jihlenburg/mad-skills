@@ -11,6 +11,7 @@ The repo is a small marketplace, so you grab only the skills you want rather tha
 | Skill | What it's for |
 |---|---|
 | `devils-advocate` | Have a subagent argue against a decision before you commit to it. Meant for the calls that are expensive to get wrong: an architecture or migration choice, a security model, a claim in a doc or paper, a hire. |
+| `trains-of-thought-audit` | Audit a long, much-edited or LLM-written document for places where it contradicts itself — numbers that drift between sections, invention/figure numbering that breaks, claims it rejects in one place and uses in another. |
 
 More will show up here over time.
 
@@ -45,6 +46,14 @@ This skill gets around that by spinning up a fresh subagent and handing it a sid
 I originally wrote it for pitch and strategy decisions and then generalized it. The same brief now holds up for engineering, research, security, and hiring calls; the only things that really change between domains are the proposal, the counter-thesis, and the words you use for the verdict.
 
 One caveat on when to bother: it's worth running before something costly or hard to undo. For a one-line fix or a reversible toggle it's overkill, and the skill says as much itself.
+
+## About trains-of-thought-audit
+
+Long documents that have been edited a lot — or written by an LLM in one long stretch — quietly contradict themselves. A number is 20,000 in one section and 24,000 forty pages later; a concept is defined one way early and used differently later; an "Invention #8" is declared folded in one place and cited as live in three others. The cause is that the document's actual specifications are never written down and tracked, so each section re-derives them from fading memory.
+
+This skill audits for that. It builds a typed registry of every claim (numbers, definitions, repudiations, invention/figure numbering, the sums that should add up), reconciles every mention against it, and separately does a directed read for the contradictions a registry misses. Every finding is then re-checked against the document by re-quoting both sides, so what comes back is verified, not guessed.
+
+I tested it on a real 75k-word report, and it's honestly a precision aid rather than a magic wand: it found a stack of real contradictions at zero false positives, but a plain careful read still caught a couple it missed (internal arithmetic is its weak spot). So run it alongside a read, not instead of one — the skill spells this out in its own coverage-limits section.
 
 ## Adding your own
 
