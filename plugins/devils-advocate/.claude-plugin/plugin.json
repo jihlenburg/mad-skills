@@ -1,0 +1,13 @@
+{
+  "name": "devils-advocate",
+  "description": "Use when about to commit to a high-cost or hard-to-reverse decision and you want it adversarially stress-tested first. Dispatches a subagent with an assigned counter-position.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Joern Ihlenburg",
+    "url": "https://github.com/jihlenburg"
+  },
+  "homepage": "https://github.com/jihlenburg/mad-skills",
+  "repository": "https://github.com/jihlenburg/mad-skills",
+  "license": "MIT",
+  "keywords": ["devils-advocate", "decision-review", "adversarial-review", "subagent", "skills"]
+}

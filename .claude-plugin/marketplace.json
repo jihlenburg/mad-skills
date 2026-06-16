@@ -1,0 +1,15 @@
+{
+  "name": "mad-skills",
+  "description": "A small collection of Agent Skills, installable individually.",
+  "owner": {
+    "name": "Joern Ihlenburg",
+    "url": "https://github.com/jihlenburg"
+  },
+  "plugins": [
+    {
+      "name": "devils-advocate",
+      "source": "./plugins/devils-advocate",
+      "description": "Dispatch a subagent to argue against a decision before you commit. For the calls that are costly to get wrong."
+    }
+  ]
+}
